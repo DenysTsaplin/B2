@@ -1,0 +1,23 @@
+<script>
+    var array_win = [];
+    var array_loose = [];
+    for(var i = 0; i < 12; i++) {
+        var first_number = Math.floor(Math.random() * 90) + 10;
+        var second_number = Math.floor(Math.random() * 90) + 10;
+        var right_result = first_number * second_number;
+        var user_answer = +prompt(`${first_number} * ${second_number} =`);
+        if(user_answer == right_result) {
+            array_win.push(user_answer);
+        }
+        else {
+            array_loose.push([`${first_number} * ${second_number} =`, user_answer, right_result]);
+        }
+    }
+    console.log("Your right answers:");
+    console.log(array_win);
+    console.log("Your wrong answers:");
+    for(var i = 0; i < array_loose.length; i++) {
+        console.log(array_loose[i][0], "Your answer:", array_loose[i][1], "Right answer:", array_loose[i][2]);
+    }
+    console.log("Your mark:", array_win.length);
+</script>
